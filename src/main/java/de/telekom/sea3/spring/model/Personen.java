@@ -8,8 +8,8 @@ import java.util.List;
 public class Personen {
     List<Person> personen = new ArrayList<Person>();
 
-    public Personen(List<Person> personen) {
-        this.personen = personen;
+    public Personen(List<Person> all) {
+        this.personen = all;
     }
 
     public Personen() {

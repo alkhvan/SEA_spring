@@ -23,6 +23,7 @@
             <td><h5>Salutation</h5></td>
             <td><h5>Name</h5></td>
             <td><h5>Surname</h5></td>
+            <td><h5>Email</h5></td>
         </tr>
         <tr>
             <td id="id004">1</td>
@@ -30,6 +31,7 @@
             <td id="id003">Mr</td>
             <td id="id001">Paul</td>
             <td id="id002">Paulsen</td>
+            <td id="id005">Paulsen@mail.ru</td>
 
         </tr>
         <tr>
@@ -38,6 +40,7 @@
             <td>Mrs</td>
             <td>Anna</td>
             <td>Banana</td>
+            <td>Banana@mail.ru</td>
 
         </tr>
     </table>
@@ -55,7 +58,16 @@
         <input id="surname" type="surname" placeholder="Enter Your Surname" name="surname" required>
 
         <label  for="salutation"><b>Salutation</b></label>
-        <input id="salutation" type="salutation" placeholder="Enter Your Salutation" name="salutation" required>
+        <select name="salutation" id="salutation">
+            <option value="-">-</option>
+            <option value="Mr">Mr</option>
+            <option value="Mrs">Mrs</option>
+            <option value="Miss">Miss</option>
+        </select>
+<!--        <option selected value="s1">Mrs</option>-->
+<!--        <option value="s2">Mr</option>-->
+<!--        <option value="s3">Miss</option>-->
+<!--        <input id="salutation" type="salutation" placeholder="Enter Your Salutation" name="salutation" required>-->
 
         <label for="email"><b>Email</b></label>
         <input id="email" type="salutation" placeholder="Enter Your Email" name="email" required>

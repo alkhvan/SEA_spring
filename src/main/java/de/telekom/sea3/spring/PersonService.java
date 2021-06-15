@@ -1,4 +1,6 @@
 package de.telekom.sea3.spring;
+
+import de.telekom.sea3.spring.model.Personen;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,8 +11,14 @@ public class PersonService {
     @Autowired
     public PersonService(PersonRepository personRepository) {
         super();
-        System.out.println("PersonService instanziert: " + this.toString());
+        System.out.println("PersonService is created: " + this.toString());
         System.out.println("PersonRepository: " + personRepository.toString());
         this.personRepository = personRepository;
+    }
+    public int getSize(){
+        return personRepository.getSize();
+    }
+    public Personen getAllPersons(){
+        return new Personen();
     }
 }

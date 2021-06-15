@@ -27,7 +27,7 @@ function getImg(salutation) {
 		case "Miss":
 			return 'images/woman.png';
 		default:
-			return 'images/questionMark.png';
+			return 'images/woman.png';
 	}
 }
 

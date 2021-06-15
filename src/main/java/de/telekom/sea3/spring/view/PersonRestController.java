@@ -1,6 +1,7 @@
-package de.telekom.sea3.spring;
+package de.telekom.sea3.spring.view;
 
 
+import de.telekom.sea3.spring.PersonService;
 import de.telekom.sea3.spring.model.Personen;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

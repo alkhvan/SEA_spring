@@ -21,4 +21,12 @@ public class PersonService {
     public Personen getAllPersons(){
         return new Personen();
     }
+    public Person get (int id){
+        return new Person("Anna-Maria","Keller","Mrs");
+    }
+    public Person add (Person person){
+        personRepository.add(person);
+        System.out.println("Person was added");
+        return person;
+    }
 }

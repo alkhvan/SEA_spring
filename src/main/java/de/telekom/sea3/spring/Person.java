@@ -7,6 +7,15 @@ public class Person {
     private String surname;
     private String salutation;
 
+    public Person() {
+    }
+
+    public Person(String name, String surname, String salutation) {
+        this.name = name;
+        this.surname = surname;
+        this.salutation = salutation;
+    }
+
     public String getName() {
         return name;
     }

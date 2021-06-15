@@ -1,5 +1,6 @@
 var para = document.getElementById("id4711");
 para.textContent = "Hello from JavaScript";
+
 function getJson(irgendwas) {
 	return irgendwas.json();
 }
@@ -10,14 +11,24 @@ function getTxtFromJsonUndPackInsHTML(myjson) {
     		// new element in the table
     		tabelle.insertAdjacentHTML("beforeend", "<tr>"
     			+ "<td>3</td>"
-    	//		+ "<td class="pic"><img src='images/david.png' width='90' height='111'/></td>"
     			+ "<td><img src='images/david.png' width='90' height='111'/></td>"
-    	//		+ "<td><img src='images/david.png'></td>"
     			+ "<td>" + laufvariable.salutation + "</td>"
     			+ "<td>" + laufvariable.name + "</td>"
     			+ "<td>" + laufvariable.surname + "</td>"
     			+ "</tr>")
 }
+}
+
+function getImg(salutation) {
+	switch (salutation) {
+		case "Mr":
+			return 'images/david.png';
+		case "Mrs":
+		case "Miss":
+			return 'images/woman.png';
+		default:
+			return 'images/questionMark.png';
+	}
 }
 
 function submitClick(event) {
@@ -29,21 +40,21 @@ function submitClick(event) {
 	console.log(name);
 	var surname = document.getElementById("surname").value;
 	console.log(surname);
-
-	var jsondata = `{"salutation": ${salutation}, "name": "${name}", "surname": "${surname}"}`;
+	var jsondata = `{"salutation": "${salutation}", "name": "${name}", "surname": "${surname}"}`;
     	console.log(jsondata);
-fetch("http://localhost:63342/SEA-3.0/public/persons", {
-		method: 'POST',
+fetch("http://localhost:8080/json/person", {
+		method: 'POST', // or 'PUT'
 		body: jsondata,
 		headers: {
 			'Content-Type': 'application/json'
-		}});
+		}
+	});
 
 }
 
 var input = document.getElementById("button");
-input.addEventListener("click", submitClick);
+input.addEventListener("click",submitClick);
 
-fetch("personen.json")
+fetch("http://localhost:8080/json/persons/all")
 	.then(getJson) 								//  entspricht: .then( irgendwas => irgendwas.json() )
-	.then(getTxtFromJsonUndPackInsHTML) 		// entpricht: cell.textContent = myjson.personen[0].vorname);
+	.then(getTxtFromJsonUndPackInsHTML)

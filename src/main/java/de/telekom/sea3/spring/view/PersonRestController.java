@@ -31,12 +31,12 @@ public class PersonRestController {
         return new Size(personService.size());
     }
 
-    @GetMapping("/json/person/{id}")	// {id} anstelle einer festen ID z.B. 42
+    @GetMapping("/json/person/{id}")	// {id}
     public Person getPerson(@PathVariable("id") int id) {
         return personService.get(id);
     }
 
-    @PostMapping("/json/person")	// Dadurch Eingabe möglich
+    @PostMapping("/json/person")
     public Person addPerson(@RequestBody Person person) {
         return personService.add(person);
     }
@@ -45,4 +45,6 @@ public class PersonRestController {
     public int deletePerson(@PathVariable("id") int id) {
         return personService.delete(id);
     }
+
+
 }

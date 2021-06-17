@@ -1,23 +1,26 @@
 
-function getJson(irgendwas) {
-	return irgendwas.json();
+function getJson(meta) {
+	return meta.json();
 }
 
 function getTxtFromJsonUndPackInsHTML(myjson) {
 	var tabelle = document.getElementById("tid001");
-	var i = 2;
+	//var i = 2;
 	for (var laufvariable of myjson.personen) {
     		// new element in the table
-    		tabelle.insertAdjacentHTML("beforeend", "<tr>"
-    			+ `<td> ${++i}</td>`
+    		tabelle.insertAdjacentHTML("beforeend",
+    		"<tr>"
+    			//+ `<td> ${++i}</td>`
+    			+ "<td>" + laufvariable.id + "</td>"
     			+ "<td><img src='" + getImg(laufvariable.salutation) + "'></td>"
     			+ "<td>" + laufvariable.salutation + "</td>"
     			+ "<td>" + laufvariable.name + "</td>"
     			+ "<td>" + laufvariable.surname +"</td>"
     			+ "<td>" + laufvariable.email + "</td>"
-    			+ "</tr>")
+    		+ "</tr>")
 }
 }
+
 
 function getImg(salutation) {
 	switch (salutation) {
@@ -31,37 +34,32 @@ function getImg(salutation) {
 	}
 }
 
-function submitClick(event) {
-	event.preventDefault();          // GET Request
+function createPerson(event) {   // bei event-click
+	event.preventDefault();      // verhindert dass das event von Browser verwendet wird (verhindert GET-Request)
 	console.log("click");
+	var id = document.getElementById("id0011").value;
 	var salutation = document.getElementById("salutation").value;
-    console.log(salutation);
 	var name = document.getElementById("name").value;
-	console.log(name);
 	var surname = document.getElementById("surname").value;
-	console.log(surname);
-	var jsondata = `{"salutation": "${salutation}", "name": "${name}", "surname": "${surname}"}`;
-    	console.log(jsondata);
-fetch("http://localhost:8080/json/person", {
-		method: 'POST', // or 'PUT'
-		body: jsondata,
+	var email = document.getElementById("email").value;
+	var jsonDataString = `{"id":"${id}","salutation":"${salutation}","name":"${name}","surname":"${surname}","email":"${email}"}`;
+	console.log(jsonDataString);
+
+	fetch("http://localhost:8080/json/person", {
+		method: 'POST',
+		body: jsonDataString,
 		headers: {
 			'Content-Type': 'application/json'
-		}
+        }
 	});
-
 }
 
-var input = document.getElementById("button");
-input.addEventListener("click",submitClick);
 
-fetch("http://localhost:8080/json/persons/all")
-	.then(getJson) 								//  entspricht: .then( irgendwas => irgendwas.json() )
-	.then(getTxtFromJsonUndPackInsHTML)
+
+
 
 function removePerson (event){
 event.preventDefault();
-console.log("click");
 var id = document.getElementById("id0011").value;
     console.log(id);
     fetch(`http://localhost:8080/json/person/${id}`, {
@@ -69,5 +67,16 @@ var id = document.getElementById("id0011").value;
         	});
 	}
 
-var input = document.getElementById("remove");
+
+
+//POST
+var input = document.getElementById("button");
+input.addEventListener("click",createPerson);
+
+//DELETE
+var input = document.getElementById("buttonremove");
 input.addEventListener("click",removePerson);
+
+fetch("http://localhost:8080/json/persons/all")
+	.then(getJson)
+	.then(getTxtFromJsonUndPackInsHTML)

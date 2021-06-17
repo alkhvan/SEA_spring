@@ -63,33 +63,34 @@
         </footer>
         <h1>Join us!</h1>
         <hr>
-        <label  for="salutation"><b>Salutation</b></label>
+        <label for="id0011">ID:</label> <br> <input id="id0011" type="text"
+                                                name="id0011"> <br>
+
+        <label for="salutation">Salutation</label><br>
         <select name="salutation" id="salutation">
+
             <option value="-">-</option>
             <option value="Mr">Mr</option>
             <option value="Mrs">Mrs</option>
             <option value="Miss">Miss</option>
             <option value="-">-</option>
-        </select>
-        <label for="id0011"><b>ID</b></label>
-        <input type="text" id="id0011" name="id"  placeholder="Enter Your ID or leave empty (will be filled automatically)">
-        <label for="name"><b>Name</b></label>
-        <input id="name" type="name" placeholder="Enter Your Name" name="name">
+        </select> <br>
 
-        <label for="surname"><b>Surname</b></label>
-        <input id="surname" type="surname" placeholder="Enter Your Surname" name="surname">
+        <label for="name">Name</label> <br>
+        <input id="name" type="text" name="name" placeholder="Enter Your Name"> <br>
 
+        <label for="surname">Surname</label> <br>
+        <input id="surname" type="surname" placeholder="Enter Your Surname" name="surname"> <br>
 
-        <label for="email"><b>Email</b></label>
-        <input id="email" type="salutation" placeholder="Enter Your Email" name="email">
+        <label for="email">E-Mail</label> <br>
+        <input type="email" id="email" name="email" placeholder="Enter Your Email"> <br>
         <hr>
 
         <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-        <button id="button" type="button" class="persons">Submit</button>
+        <input type="submit" id="button" value="Submit">
+        <input type="submit" id="buttonremove" value="Delete">
         <hr>
-        <label for="remove"><b>Remove person by ID</b></label>
-        <input type="text" placeholder="Enter Your ID" name="remove" required>
-        <button id="remove" type="button" class="persons">Submit</button>
+
 
     </div>
     </form>

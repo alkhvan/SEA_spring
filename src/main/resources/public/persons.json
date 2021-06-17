@@ -4,17 +4,20 @@
   "person": {
     "name": "Paul",
     "surname": "Paulsen",
-    "salutation": "Mr"
+    "salutation": "Mr",
+    "email": "PaulPaulsen@mail.de"
   },
   "person": {
     "name": "Paulina",
     "surname": "Mueller",
-    "salutation": "Mrs"
+    "salutation": "Mrs",
+    "email": "PaulinaM@mail.de"
   },
   "person": {
     "name": "Paulina",
     "surname": "Mueller",
-    "salutation": "Mrs"
+    "salutation": "Mrs",
+    "email": "PaulinaMM@mail.de"
   }
 }
     ]

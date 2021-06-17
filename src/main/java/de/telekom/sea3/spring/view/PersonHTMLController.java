@@ -25,11 +25,11 @@ public class PersonHTMLController {
     @GetMapping("/size")
     @ResponseBody()
     public String getSize() {
-        String string1 = Integer.toString(personService.getSize());
-        String string2 = String.valueOf(personService.getSize());
-        String string3 = "" + personService.getSize();
-        String string4 = String.format("%d", personService.getSize());
-        String string5 = String.format(HTMLTEMPLATE, personService.getSize());
+        String string1 = Integer.toString(personService.size());
+        String string2 = String.valueOf(personService.size());
+        String string3 = "" + personService.size();
+        String string4 = String.format("%d", personService.size());
+        String string5 = String.format(HTMLTEMPLATE, personService.size());
 
         return string5;
     }

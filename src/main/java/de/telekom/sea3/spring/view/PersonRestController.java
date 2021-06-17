@@ -1,12 +1,11 @@
 package de.telekom.sea3.spring.view;
 
 
-import de.telekom.sea3.spring.Person;
+import de.telekom.sea3.spring.model.Person;
 import de.telekom.sea3.spring.PersonService;
-import de.telekom.sea3.spring.Size;
+import de.telekom.sea3.spring.model.Size;
 import de.telekom.sea3.spring.model.Personen;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -23,13 +22,13 @@ public class PersonRestController {
     //** @see URL: <a href="http://localhost:8080/json/persons/all">http://localhost:8080/json/persons/all</a> */
     @GetMapping("/json/persons/all")
     public Personen getAllPersons() {
-        Personen personen = personService.getAllPersons();
+        Personen personen = personService.getAll();
         return personen;
     }
 
     @GetMapping("/json/persons/size")
     public Size getSize() {
-        return new Size(personService.getSize());
+        return new Size(personService.size());
     }
 
     @GetMapping("/json/person/{id}")	// {id} anstelle einer festen ID z.B. 42
@@ -40,5 +39,10 @@ public class PersonRestController {
     @PostMapping("/json/person")	// Dadurch Eingabe möglich
     public Person addPerson(@RequestBody Person person) {
         return personService.add(person);
+    }
+
+    @DeleteMapping("/json/person/{id}")
+    public int deletePerson(@PathVariable("id") int id) {
+        return personService.delete(id);
     }
 }

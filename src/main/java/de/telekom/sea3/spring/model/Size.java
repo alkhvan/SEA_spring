@@ -1,4 +1,4 @@
-package de.telekom.sea3.spring;
+package de.telekom.sea3.spring.model;
 
 public class Size {
     private int size;

@@ -7,77 +7,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width = device-width,initial-scale=1.0">
     <script src="myscript.js" type="module"></script>
+    <style>
+   table  {
+    width: 300px; /* Ширина таблицы */
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+   }
+   th,td  {
+    padding: 3px; /* Поля вокруг содержимого таблицы */
+    border: 1px solid black; /* Параметры рамки */
+   }
+   td.col1 { background: #C0C0C0; }
+   td.col2 { background: #DCDCDC; }
+  </style>
 </head>
 <body bgcolor="#00CED1">
+
 <!-- body: sichtbare Bereich -->
 <div class="person">
-    <h5> The list of persons:</h5>
-    <p>
+    <table class="table table-dark" align="center" id="tid001">
 
-    </p>
-    <table class="table table-dark" id="tid001">
 <!--    <table id="tid001">-->
         <tr>
-            <td><h5>ID</h5></td>
-            <td><h5>Photo</h5></td>
-            <td><h5>Salutation</h5></td>
-            <td><h5>Name</h5></td>
-            <td><h5>Surname</h5></td>
-            <td><h5>Email</h5></td>
+            <td class="col1"><h5>ID</h5></td>
+            <td class="col1"><h5>Photo</h5></td>
+            <td class="col1"><h5>Salutation</h5></td>
+            <td class="col1"><h5>Name</h5></td>
+            <td class="col1"><h5>Surname</h5></td>
+            <td class="col1"><h5>Email</h5></td>
         </tr>
         <tr>
-            <td id="id004">1</td>
-            <td class="pic"><img src="images/david.png" width="90" height="111"/></td>
-            <td id="id003">Mr</td>
-            <td id="id001">Paul</td>
-            <td id="id002">Paulsen</td>
-            <td id="id005">Paulsen@mail.ru</td>
+            <td id="id004" class="col2">1</td>
+            <td class="col2"><img src="images/david.png" width="90" height="111"/></td>
+            <td id="id003" class="col2">Mr</td>
+            <td id="id001" class="col2">Paul</td>
+            <td id="id002" class="col2">Paulsen</td>
+            <td id="id005" class="col2">Paulsen@mail.ru</td>
 
         </tr>
         <tr>
-            <td>2</td>
-            <td class="pic"><img src="images/women.png"  width="90" height="111"/></td>
-            <td>Mrs</td>
-            <td>Anna</td>
-            <td>Banana</td>
-            <td>Banana@mail.ru</td>
+            <td class="col2">2</td>
+            <td class="col2"><img src="images/women.png"  width="90" height="111"/></td>
+            <td class="col2">Mrs</td>
+            <td class="col2">Anna</td>
+            <td class="col2">Banana</td>
+            <td class="col2">Banana@mail.ru</td>
 
         </tr>
     </table>
 </div>
 
-<form action="images/joinus.png">
+<form action="images/joinus.png" align="center">
     <div class="container">
+        <footer align="center">
+            <img src="images/joinus.png" width="150" height="121">
+        </footer>
         <h1>Join us!</h1>
         <hr>
-
-        <label for="name"><b>Name</b></label>
-        <input id="name" type="name" placeholder="Enter Your Name" name="name" required>
-
-        <label for="surname"><b>Surname</b></label>
-        <input id="surname" type="surname" placeholder="Enter Your Surname" name="surname" required>
-
         <label  for="salutation"><b>Salutation</b></label>
         <select name="salutation" id="salutation">
             <option value="-">-</option>
             <option value="Mr">Mr</option>
             <option value="Mrs">Mrs</option>
             <option value="Miss">Miss</option>
+            <option value="-">-</option>
         </select>
-<!--        <option selected value="s1">Mrs</option>-->
-<!--        <option value="s2">Mr</option>-->
-<!--        <option value="s3">Miss</option>-->
-<!--        <input id="salutation" type="salutation" placeholder="Enter Your Salutation" name="salutation" required>-->
+        <label for="id0011"><b>ID</b></label>
+        <input type="text" id="id0011" name="id"  placeholder="Enter Your ID or leave empty (will be filled automatically)">
+        <label for="name"><b>Name</b></label>
+        <input id="name" type="name" placeholder="Enter Your Name" name="name">
+
+        <label for="surname"><b>Surname</b></label>
+        <input id="surname" type="surname" placeholder="Enter Your Surname" name="surname">
+
 
         <label for="email"><b>Email</b></label>
-        <input id="email" type="salutation" placeholder="Enter Your Email" name="email" required>
+        <input id="email" type="salutation" placeholder="Enter Your Email" name="email">
         <hr>
 
         <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
         <button id="button" type="button" class="persons">Submit</button>
+        <hr>
+        <label for="remove"><b>Remove person by ID</b></label>
+        <input type="text" placeholder="Enter Your ID" name="remove" required>
+        <button id="remove" type="button" class="persons">Submit</button>
+
     </div>
     </form>
 
-<p id="id4711">Abschnitt 2</p>
+
+
 </body>
 </html>

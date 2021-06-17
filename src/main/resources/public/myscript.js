@@ -1,5 +1,3 @@
-var para = document.getElementById("id4711");
-para.textContent = "Hello from JavaScript";
 
 function getJson(irgendwas) {
 	return irgendwas.json();
@@ -7,14 +5,16 @@ function getJson(irgendwas) {
 
 function getTxtFromJsonUndPackInsHTML(myjson) {
 	var tabelle = document.getElementById("tid001");
+	var i = 2;
 	for (var laufvariable of myjson.personen) {
     		// new element in the table
     		tabelle.insertAdjacentHTML("beforeend", "<tr>"
-    			+ "<td>3</td>"
-    			+ "<td><img src='images/david.png' width='90' height='111'/></td>"
+    			+ `<td> ${++i}</td>`
+    			+ "<td><img src='" + getImg(laufvariable.salutation) + "'></td>"
     			+ "<td>" + laufvariable.salutation + "</td>"
     			+ "<td>" + laufvariable.name + "</td>"
-    			+ "<td>" + laufvariable.surname + "</td>"
+    			+ "<td>" + laufvariable.surname +"</td>"
+    			+ "<td>" + laufvariable.email + "</td>"
     			+ "</tr>")
 }
 }
@@ -25,9 +25,9 @@ function getImg(salutation) {
 			return 'images/david.png';
 		case "Mrs":
 		case "Miss":
-			return 'images/woman.png';
+			return 'images/women.png';
 		default:
-			return 'images/woman.png';
+			return 'images/frage.png';
 	}
 }
 
@@ -58,3 +58,16 @@ input.addEventListener("click",submitClick);
 fetch("http://localhost:8080/json/persons/all")
 	.then(getJson) 								//  entspricht: .then( irgendwas => irgendwas.json() )
 	.then(getTxtFromJsonUndPackInsHTML)
+
+function removePerson (event){
+event.preventDefault();
+console.log("click");
+var id = document.getElementById("id0011").value;
+    console.log(id);
+    fetch(`http://localhost:8080/json/person/${id}`, {
+        		method: 'DELETE'
+        	});
+	}
+
+var input = document.getElementById("remove");
+input.addEventListener("click",removePerson);

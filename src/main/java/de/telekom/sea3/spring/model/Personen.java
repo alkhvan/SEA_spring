@@ -1,12 +1,10 @@
 package de.telekom.sea3.spring.model;
 
-import de.telekom.sea3.spring.Person;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Personen {
-    List<Person> personen = new ArrayList<Person>();
+    private List<Person> personen = new ArrayList<Person>();
 
     public Personen(List<Person> all) {
         this.personen = all;

@@ -24,7 +24,7 @@ public class PersonService {
     }
     public Person get (int id)
     {
-        return new Person(3,"Anna-Maria","Keller","Mrs","AM@mail.de");
+        return new Person(3,"Anna-Maria","Keller","Mrs","AM@mail.de","01.04.1989");
     }
     public Person add (Person person){
         personRepository.add(person);

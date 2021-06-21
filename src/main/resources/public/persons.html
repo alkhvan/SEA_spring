@@ -1,60 +1,55 @@
-<!DOCTYPE html>
-<html lang='de'>
+<!DOCTYPE HTML>
+<html lang='de' xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/mycss.css">
     <title>SEA Kurs List</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width = device-width,initial-scale=1.0">
     <script src="myscript.js" type="module"></script>
-    <style>
-   table  {
-    width: 300px; /* Ширина таблицы */
-    border-collapse: collapse; /* Убираем двойные линии между ячейками */
-   }
-   th,td  {
-    padding: 3px; /* Поля вокруг содержимого таблицы */
-    border: 1px solid black; /* Параметры рамки */
-   }
-   td.col1 { background: #C0C0C0; }
-   td.col2 { background: #DCDCDC; }
-  </style>
 </head>
-<body bgcolor="#00CED1">
+<body>
+<header>
+    <h2>Group SEA - Welle 4</h2>
+</header>
 
-<!-- body: sichtbare Bereich -->
 <div class="person">
     <table class="table table-dark" align="center" id="tid001">
-
-<!--    <table id="tid001">-->
+        <thead class="hideit" id="thid001">
         <tr>
-            <td class="col1"><h5>ID</h5></td>
-            <td class="col1"><h5>Photo</h5></td>
-            <td class="col1"><h5>Salutation</h5></td>
-            <td class="col1"><h5>Name</h5></td>
-            <td class="col1"><h5>Surname</h5></td>
-            <td class="col1"><h5>Email</h5></td>
+            <th class="col1"><h5>ID</h5></th>
+            <th class="col1"><h5>Photo</h5></th>
+            <th class="col1"><h5>Salutation</h5></th>
+            <th class="col1"><h5>Name</h5></th>
+            <th class="col1"><h5>Surname</h5></th>
+            <th class="col1"><h5>Birthdate</h5></th>
+            <th class="col1"><h5>Email</h5></th>
         </tr>
+        </thead>
+        <tbody id="tbid001">
         <tr>
-            <td id="id004" class="col2">1</td>
-            <td class="col2"><img src="images/david.png" width="90" height="111"/></td>
-            <td id="id003" class="col2">Mr</td>
-            <td id="id001" class="col2">Paul</td>
-            <td id="id002" class="col2">Paulsen</td>
-            <td id="id005" class="col2">Paulsen@mail.ru</td>
-
-        </tr>
-        <tr>
-            <td class="col2">2</td>
-            <td class="col2"><img src="images/women.png"  width="90" height="111"/></td>
-            <td class="col2">Mrs</td>
-            <td class="col2">Anna</td>
-            <td class="col2">Banana</td>
-            <td class="col2">Banana@mail.ru</td>
+            <th id="id004" class="col2">1</th>
+            <th class="col2"><img src="images/david.png" width="90" height="111"/></th>
+            <th id="id003" class="col2">Mr</th>
+            <th id="id001" class="col2">Paul</th>
+            <th id="id002" class="col2">Paulsen</th>
+            <th id="id006" class="col2">06.06.1966</th>
+            <th id="id005" class="col2">Paulsen@mail.ru</th>
 
         </tr>
+        <tr>
+            <th class="col2">2</th>
+            <th class="col2"><img src="images/women.png"  width="90" height="111"/></th>
+            <th class="col2">Mrs</th>
+            <th class="col2">Anna</th>
+            <th class="col2">Banana</th>
+            <th class="col2">06.08.1968</th>
+            <th class="col2">Banana@mail.ru</th>
+
+        </tr>
+        </tbody>
     </table>
 </div>
+
 
 <form action="images/joinus.png" align="center">
     <div class="container">
@@ -82,6 +77,9 @@
         <label for="surname">Surname</label> <br>
         <input id="surname" type="surname" placeholder="Enter Your Surname" name="surname"> <br>
 
+        <label for="birthdate">Birthdate</label> <br>
+        <input id="birthdate" type="birthdate" placeholder="Enter Your birthdate" name="birthdate"> <br>
+
         <label for="email">E-Mail</label> <br>
         <input type="email" id="email" name="email" placeholder="Enter Your Email"> <br>
         <hr>
@@ -90,12 +88,7 @@
         <input type="submit" id="button" value="Submit">
         <input type="submit" id="buttonremove" value="Delete">
         <hr>
-
-
     </div>
     </form>
-
-
-
 </body>
 </html>

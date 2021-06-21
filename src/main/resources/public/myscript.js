@@ -4,11 +4,13 @@ function getJson(meta) {
 }
 
 function getTxtFromJsonUndPackInsHTML(myjson) {
-	var tabelle = document.getElementById("tid001");
+//	var tabelle = document.getElementById("tid001");
+	var t_header = document.getElementById("thid001");
+    var t_body = document.getElementById("tbid001");
 	//var i = 2;
 	for (var laufvariable of myjson.personen) {
     		// new element in the table
-    		tabelle.insertAdjacentHTML("beforeend",
+    		t_body.insertAdjacentHTML("beforeend",
     		"<tr>"
     			//+ `<td> ${++i}</td>`
     			+ "<td>" + laufvariable.id + "</td>"
@@ -16,6 +18,7 @@ function getTxtFromJsonUndPackInsHTML(myjson) {
     			+ "<td>" + laufvariable.salutation + "</td>"
     			+ "<td>" + laufvariable.name + "</td>"
     			+ "<td>" + laufvariable.surname +"</td>"
+    			+ "<td>" + laufvariable.birthdate +"</td>"
     			+ "<td>" + laufvariable.email + "</td>"
     		+ "</tr>")
 }
@@ -41,8 +44,9 @@ function createPerson(event) {   // bei event-click
 	var salutation = document.getElementById("salutation").value;
 	var name = document.getElementById("name").value;
 	var surname = document.getElementById("surname").value;
+	var birthdate = document.getElementById("birthdate").value;
 	var email = document.getElementById("email").value;
-	var jsonDataString = `{"id":"${id}","salutation":"${salutation}","name":"${name}","surname":"${surname}","email":"${email}"}`;
+	var jsonDataString = `{"id":"${id}","salutation":"${salutation}","name":"${name}","surname":"${surname}","birthdate":"${birthdate}","email":"${email}"}`;
 	console.log(jsonDataString);
 
 	fetch("http://localhost:8080/json/person", {

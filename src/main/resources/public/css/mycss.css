@@ -1,4 +1,3 @@
-
 @charset "UTF-8";
 
 /* Style of body */
@@ -9,7 +8,23 @@ body {
 	font-size: 1rem;
 	line-height: 1.5;
 	color: #212529;
-	background-color: #eeeeec;
+	background-color: #00CED1;
+}
+table  {
+    width: 300px; /* Ширина таблицы */
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+   }
+   th,td  {
+    padding: 3px; /* Поля вокруг содержимого таблицы */
+    border: 1px solid black; /* Параметры рамки */
+   }
+td.col1 { background: #C0C0C0; }
+td.col2 { background: #DCDCDC; }
+
+img {
+
+  width: 90px;
+  height: 111px;
 }
 
 h2 { text-align: center; }
@@ -23,7 +38,7 @@ form {
 	text-align: center;
 }
 
-/* Style of table */
+/* Style of table
 table {
 	caption-side: bottom;
 	border-collapse: collapse;
@@ -36,7 +51,6 @@ table {
 	border-color: #888a85;
 	background-color: #ffffff;
 }
-
 th {
 	border: 1px solid #bbc0b8;
 	background-color: #f9076d;
@@ -46,4 +60,4 @@ th {
 td {
 	border: 1px solid #bbc0b8;
 	text-align: center;
-}
+} */

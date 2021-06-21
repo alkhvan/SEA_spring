@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang='de' xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="css/mycss.css">
+    <title>SEA Kurs List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width,initial-scale=1.0">
+    <script src="myscript.js" type="module"></script>
+</head>
+<body>
+<header>
+    <h2>Group SEA - Welle 4</h2>
+</header>
+
+<div class="person">
+    <table class="table table-dark" align="center" id="tid001">
+        <thead class="hideit" id="thid001">
+        <tr>
+            <th class="col1"><h5>ID</h5></th>
+            <th class="col1"><h5>Photo</h5></th>
+            <th class="col1"><h5>Salutation</h5></th>
+            <th class="col1"><h5>Name</h5></th>
+            <th class="col1"><h5>Surname</h5></th>
+            <th class="col1"><h5>Email</h5></th>
+            <th class="col1"><h5>Birthdate</h5></th>
+        </tr>
+        </thead>
+        <tbody id="tbid001">
+<!--        <tr>-->
+<!--            <th id="id004" class="col2">1</th>-->
+<!--            <th class="col2"><img src="images/david.png" width="90" height="111"/></th>-->
+<!--            <th id="id003" class="col2">Mr</th>-->
+<!--            <th id="id001" class="col2">Paul</th>-->
+<!--            <th id="id002" class="col2">Paulsen</th>-->
+<!--            <th id="id006" class="col2">06.06.1966</th>-->
+<!--            <th id="id005" class="col2">Paulsen@mail.ru</th>-->
+
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <th class="col2">2</th>-->
+<!--            <th class="col2"><img src="images/women.png"  width="90" height="111"/></th>-->
+<!--            <th class="col2">Mrs</th>-->
+<!--            <th class="col2">Anna</th>-->
+<!--            <th class="col2">Banana</th>-->
+<!--            <th class="col2">06.08.1968</th>-->
+<!--            <th class="col2">Banana@mail.ru</th>-->
+
+<!--        </tr>-->
+        </tbody>
+    </table>
+</div>
+<hr>
+
+<form action="images/joinus.png" align="center">
+    <div class="container">
+        <footer align="center">
+            <img src="images/joinus.png" width="150" height="121">
+        </footer>
+        <h1>Join us!</h1>
+        <hr>
+        <label for="id0011">ID:</label> <br> <input id="id0011" type="text"
+                                                name="id0011"> <br>
+
+        <label for="salutation">Salutation</label><br>
+        <select name="salutation" id="salutation">
+
+            <option value="-">-</option>
+            <option value="Mr">Mr</option>
+            <option value="Mrs">Mrs</option>
+            <option value="Miss">Miss</option>
+            <option value="-">-</option>
+        </select> <br>
+
+        <label for="name">Name</label> <br>
+        <input id="name" type="text" name="name" placeholder="Enter Your Name"> <br>
+
+        <label for="surname">Surname</label> <br>
+        <input id="surname" type="text" placeholder="Enter Your Surname" name="surname"> <br>
+
+        <label for="email">E-Mail</label> <br>
+        <input type="email" id="email" name="email" placeholder="Enter Your Email"> <br>
+
+        <label for="birthdate">Birthdate</label> <br>
+        <input id="birthdate" type="date" placeholder="Enter Your birthdate" name="birthdate"> <br>
+
+
+        <hr>
+
+        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+        <input type="submit" id="button" value="Submit">
+        <input type="submit" id="buttonremove" value="Delete">
+        <hr>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "persons": [
+{
+  "person": {
+    "name": "Paul",
+    "surname": "Paulsen",
+    "salutation": "Mr",
+    "email": "PaulPaulsen@mail.de"
+  },
+  "person": {
+    "name": "Paulina",
+    "surname": "Mueller",
+    "salutation": "Mrs",
+    "email": "PaulinaM@mail.de"
+  },
+  "person": {
+    "name": "Paulina",
+    "surname": "Mueller",
+    "salutation": "Mrs",
+    "email": "PaulinaMM@mail.de"
+  }
+}
+    ]
+}

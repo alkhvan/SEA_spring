@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+/* Style of body */
+body {
+	font-family: var(- -bs-font-sans-serif);
+	-bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, "Noto Sans";
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #212529;
+	background-color: #00CED1;
+}
+table  {
+    width: 300px; /* Ширина таблицы */
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+   }
+   th  {
+    padding: 3px; /* Поля вокруг содержимого таблицы */
+    border: 1px solid black; /* Параметры рамки */
+    background-color: #C0C0C0;
+   }
+   td  {
+       padding: 3px; /* Поля вокруг содержимого таблицы */
+       border: 1px solid black; /* Параметры рамки */
+       background-color: #DCDCDC;
+      }
+td.col1 { background: #C0C0C0; }
+td.col2 { background: #DCDCDC; }
+
+img {
+
+  width: 90px;
+  height: 111px;
+}
+
+h2 { text-align: center; }
+h4 { text-align: center; }
+h5 { text-align: center; }
+
+p,a { color: #f9076d; }
+
+/* Style of form */
+form {
+	text-align: center;
+}
+
+/* Style of table
+table {
+	caption-side: bottom;
+	border-collapse: collapse;
+	box-sizing: border-box;
+	vertical-align: middle;
+	width: 100%;
+	margin-bottom: 1rem;
+	color: #204a87;
+	vertical-align: top;
+	border-color: #888a85;
+	background-color: #ffffff;
+}
+th {
+	border: 1px solid #bbc0b8;
+	background-color: #f9076d;
+	color: #ffffff;
+}
+
+td {
+	border: 1px solid #bbc0b8;
+	text-align: center;
+} */

@@ -14,10 +14,16 @@ table  {
     width: 300px; /* Ширина таблицы */
     border-collapse: collapse; /* Убираем двойные линии между ячейками */
    }
-   th,td  {
+   th  {
     padding: 3px; /* Поля вокруг содержимого таблицы */
     border: 1px solid black; /* Параметры рамки */
+    background-color: #C0C0C0;
    }
+   td  {
+       padding: 3px; /* Поля вокруг содержимого таблицы */
+       border: 1px solid black; /* Параметры рамки */
+       background-color: #DCDCDC;
+      }
 td.col1 { background: #C0C0C0; }
 td.col2 { background: #DCDCDC; }
 

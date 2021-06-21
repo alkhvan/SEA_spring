@@ -44,9 +44,10 @@ function createPerson(event) {   // bei event-click
 	var salutation = document.getElementById("salutation").value;
 	var name = document.getElementById("name").value;
 	var surname = document.getElementById("surname").value;
-	var birthdate = document.getElementById("birthdate").value;
 	var email = document.getElementById("email").value;
-	var jsonDataString = `{"id":"${id}","salutation":"${salutation}","name":"${name}","surname":"${surname}","birthdate":"${birthdate}","email":"${email}"}`;
+	var date = document.getElementById("birthdate").value;
+
+	var jsonDataString = `{"id":"${id}","salutation":"${salutation}","name":"${name}","surname":"${surname}","email":"${email}","birthdate":"${date}"}`;
 	console.log(jsonDataString);
 
 	fetch("http://localhost:8080/json/person", {
@@ -56,6 +57,7 @@ function createPerson(event) {   // bei event-click
 			'Content-Type': 'application/json'
         }
 	});
+	refreshClick();
 }
 
 
@@ -69,7 +71,9 @@ var id = document.getElementById("id0011").value;
     fetch(`http://localhost:8080/json/person/${id}`, {
         		method: 'DELETE'
         	});
+refreshClick();
 	}
+
 
 
 
@@ -81,6 +85,16 @@ input.addEventListener("click",createPerson);
 var input = document.getElementById("buttonremove");
 input.addEventListener("click",removePerson);
 
+function refreshPersons(){
 fetch("http://localhost:8080/json/persons/all")
 	.then(getJson)
 	.then(getTxtFromJsonUndPackInsHTML)
+}
+
+refreshPersons();
+
+
+function refreshClick() {
+	document.getElementById("tbid001").innerHTML="";
+	refreshPersons();
+}

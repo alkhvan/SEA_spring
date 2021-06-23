@@ -66,7 +66,7 @@ function createPerson(event) {   // bei event-click
 
 function removePerson (event){
 event.preventDefault();
-var id = document.getElementById("id0011").value;
+var id = document.getElementById("id0012").value;
     console.log(id);
     fetch(`http://localhost:8080/json/person/${id}`, {
         		method: 'DELETE'
@@ -76,7 +76,7 @@ refreshClick();
 
 function updatePerson (event){
 event.preventDefault();
-    var id = document.getElementById("id0011").value;
+    var id = document.getElementById("id0012").value;
 	var salutation = document.getElementById("salutation").value;
 	var name = document.getElementById("name").value;
 	var surname = document.getElementById("surname").value;

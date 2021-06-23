@@ -23,6 +23,14 @@ public class Person {
     @Column
     private String birthdate;
 
+    public Long getVersion() {
+        return version;
+    }
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
+
 
 
     public Person(Long ID,String name, String surname, String salutation, String email,String birthdate) {

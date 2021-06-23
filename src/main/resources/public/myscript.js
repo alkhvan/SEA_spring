@@ -13,6 +13,7 @@ function getTxtFromJsonUndPackInsHTML(myjson) {
     		t_body.insertAdjacentHTML("beforeend",
     		"<tr>"
     			+ `<td> ${++i}</td>`
+    			+ "<td>" + laufvariable.id + "</td>"
     			+ "<td>" + laufvariable.version + "</td>"
     		//	+ "<td>" + laufvariable.id + "</td>"
     			+ "<td><img src='" + getImg(laufvariable.salutation) + "'></td>"

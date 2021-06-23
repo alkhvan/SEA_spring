@@ -2,18 +2,21 @@
   "persons": [
 {
   "person": {
+    "ID": "1",
     "name": "Paul",
     "surname": "Paulsen",
     "salutation": "Mr",
     "email": "PaulPaulsen@mail.de"
   },
   "person": {
+    "ID": "2",
     "name": "Paulina",
     "surname": "Mueller",
     "salutation": "Mrs",
     "email": "PaulinaM@mail.de"
   },
   "person": {
+    "ID": "3",
     "name": "Paulina",
     "surname": "Mueller",
     "salutation": "Mrs",

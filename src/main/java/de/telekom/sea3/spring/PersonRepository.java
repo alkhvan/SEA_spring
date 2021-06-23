@@ -1,9 +1,12 @@
 package de.telekom.sea3.spring;
 import de.telekom.sea3.spring.model.Person;
+import de.telekom.sea3.spring.model.Personen;
 import org.springframework.stereotype.Repository;
+
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class PersonRepository {
@@ -26,11 +29,6 @@ public class PersonRepository {
         return personen;
     }
 
-//    public int delete (int id){
-//        Person person = new Person();
-//        id = person.getID();
-//        return person.getID();
-//    }
 
     public void delete(int id) {
         System.out.println("Size: " + personen.size());
@@ -41,5 +39,15 @@ public class PersonRepository {
             }
         }
         System.out.println("Size: " + personen.size());
+    }
+    public boolean update(Person person) {
+        for (int i = 0; i < personen.size(); i++) {
+            Person person1 = personen.get(i);
+            if (person1.getID().equals(person.getID())) {
+                personen.set(i, person);
+                return true;
+            }
+        }
+        return false;
     }
 }

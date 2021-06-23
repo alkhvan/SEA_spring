@@ -27,7 +27,7 @@ public class PersonHTMLController {
     @GetMapping("/size")
     @ResponseBody()
     public String getSize() {
-        String string1 = Integer.toString(personService.size());
+        String string1 = Long.toString(personService.size());
         String string2 = String.valueOf(personService.size());
         String string3 = "" + personService.size();
         String string4 = String.format("%d", personService.size());

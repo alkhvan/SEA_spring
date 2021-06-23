@@ -74,7 +74,26 @@ var id = document.getElementById("id0011").value;
 refreshClick();
 	}
 
+function updatePerson (event){
+event.preventDefault();
+    var id = document.getElementById("id0011").value;
+	var salutation = document.getElementById("salutation").value;
+	var name = document.getElementById("name").value;
+	var surname = document.getElementById("surname").value;
+	var email = document.getElementById("email").value;
+	var date = document.getElementById("birthdate").value;
 
+	var jsonDataString = `{"id":"${id}","salutation":"${salutation}","name":"${name}","surname":"${surname}","email":"${email}","birthdate":"${date}"}`;
+	console.log(jsonDataString);
+    fetch(`/json/person`, {
+    		method: 'PUT' ,
+    		body: jsonDataString,
+    		headers: {
+    			'Content-Type': 'application/json'
+    			}
+    		});
+refreshClick();
+	}
 
 
 //POST
@@ -84,6 +103,10 @@ input.addEventListener("click",createPerson);
 //DELETE
 var input = document.getElementById("buttonremove");
 input.addEventListener("click",removePerson);
+
+//UPDATE
+var input = document.getElementById("buttonupdate");
+input.addEventListener("click",updatePerson);
 
 function refreshPersons(){
 fetch("http://localhost:8080/json/persons/all")

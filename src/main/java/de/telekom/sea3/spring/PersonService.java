@@ -7,33 +7,52 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PersonService {
-    private PersonRepository personRepository;
+    private PersonRepositoryDB personRepository;
 
     @Autowired
-    public PersonService(PersonRepository personRepository) {
+    public PersonService(PersonRepositoryDB personRepositoryDB) {
         super();
         System.out.println("PersonService is created: " + this.toString());
-        System.out.println("PersonRepository: " + personRepository.toString());
-        this.personRepository = personRepository;
+        System.out.println("PersonRepository: " + personRepositoryDB.toString());
+        this.personRepository = personRepositoryDB;
     }
-    public int size(){
-        return personRepository.size();
+    public Long size(){
+        return personRepository.count();
     }
+
     public Personen getAll() {
-        return new Personen(personRepository.getAll());
+        Personen personen = new Personen();
+        for (Person p : personRepository.findAll()) {
+            personen.getPersonen().add(p);
+        }
+        return personen;
     }
-    public Person get (int id)
-    {
-        return new Person(3,"Anna-Maria","Keller","Mrs","AM@mail.de","01.04.1989");
+
+    public Person get(Long id) {
+        if (personRepository.findById(id).isPresent()) {
+            return personRepository.findById(id).get();
+        } else {
+            return null;
+        }
     }
     public Person add (Person person){
-        personRepository.add(person);
+        personRepository.save(person);
         System.out.println("Person was added");
         return person;
     }
-    public int delete(int id) {
+    public Person delete(Long id) {
         System.out.println("Person is removed.");
-        personRepository.delete(id);
-        return id;
+        personRepository.deleteById(id);
+        return null;
+    }
+    public Person update(Person person) {
+        personRepository.save(person);
+        System.out.println("Person was changed!");
+        return null;
+    }
+    public Person clear() {
+       personRepository.deleteAll();
+        System.out.println("Cleanup the list completely");
+        return null;
     }
 }

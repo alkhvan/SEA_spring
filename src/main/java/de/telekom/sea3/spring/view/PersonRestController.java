@@ -21,18 +21,18 @@ public class PersonRestController {
 
     //** @see URL: <a href="http://localhost:8080/json/persons/all">http://localhost:8080/json/persons/all</a> */
     @GetMapping("/json/persons/all")
-    public Personen getAllPersons() {
+    public Personen getAll() {
         Personen personen = personService.getAll();
         return personen;
     }
 
     @GetMapping("/json/persons/size")
-    public Size getSize() {
-        return new Size(personService.size());
+    public Long getSize() {
+        return personService.size();
     }
 
     @GetMapping("/json/person/{id}")	// {id}
-    public Person getPerson(@PathVariable("id") int id) {
+    public Person getPerson(@PathVariable("id") Long id) {
         return personService.get(id);
     }
 
@@ -42,9 +42,12 @@ public class PersonRestController {
     }
 
     @DeleteMapping("/json/person/{id}")
-    public int deletePerson(@PathVariable("id") int id) {
+    public Person deletePerson(@PathVariable("id") Long id) {
         return personService.delete(id);
     }
 
-
+    @PutMapping("/json/person")
+    public Person updatePerson(@RequestBody Person person) {
+        return personService.update(person);
+    }
 }

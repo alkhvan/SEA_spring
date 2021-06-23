@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table (name="persons")
 public class Person {
     @Id
-    private Integer ID;
+    private Long ID;
     @Column
     private String salutation;
     @Column
@@ -25,7 +25,7 @@ public class Person {
 
 
 
-    public Person(int ID,String name, String surname, String salutation, String email,String birthdate) {
+    public Person(Long ID,String name, String surname, String salutation, String email,String birthdate) {
         this.ID = ID;
         this.name = name;
         this.surname = surname;
@@ -87,11 +87,11 @@ public class Person {
         this.birthdate = birthdate;
     }
 
-    public int getID() {
+    public Long getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(Long ID) {
         this.ID = ID;
     }
 

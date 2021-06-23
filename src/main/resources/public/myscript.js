@@ -7,13 +7,13 @@ function getTxtFromJsonUndPackInsHTML(myjson) {
 //	var tabelle = document.getElementById("tid001");
 	var t_header = document.getElementById("thid001");
     var t_body = document.getElementById("tbid001");
-	//var i = 2;
+	var i = 0;
 	for (var laufvariable of myjson.personen) {
     		// new element in the table
     		t_body.insertAdjacentHTML("beforeend",
     		"<tr>"
-    			//+ `<td> ${++i}</td>`
-    			+ "<td>" + laufvariable.id + "</td>"
+    			+ `<td> ${++i}</td>`
+    		//	+ "<td>" + laufvariable.id + "</td>"
     			+ "<td><img src='" + getImg(laufvariable.salutation) + "'></td>"
     			+ "<td>" + laufvariable.salutation + "</td>"
     			+ "<td>" + laufvariable.name + "</td>"

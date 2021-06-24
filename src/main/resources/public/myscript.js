@@ -7,13 +7,15 @@ function getTxtFromJsonUndPackInsHTML(myjson) {
 //	var tabelle = document.getElementById("tid001");
 	var t_header = document.getElementById("thid001");
     var t_body = document.getElementById("tbid001");
-	//var i = 2;
+	var i = 0;
 	for (var laufvariable of myjson.personen) {
     		// new element in the table
     		t_body.insertAdjacentHTML("beforeend",
     		"<tr>"
-    			//+ `<td> ${++i}</td>`
+    			+ `<td> ${++i}</td>`
     			+ "<td>" + laufvariable.id + "</td>"
+    			+ "<td>" + laufvariable.version + "</td>"
+    		//	+ "<td>" + laufvariable.id + "</td>"
     			+ "<td><img src='" + getImg(laufvariable.salutation) + "'></td>"
     			+ "<td>" + laufvariable.salutation + "</td>"
     			+ "<td>" + laufvariable.name + "</td>"
@@ -40,14 +42,16 @@ function getImg(salutation) {
 function createPerson(event) {   // bei event-click
 	event.preventDefault();      // verhindert dass das event von Browser verwendet wird (verhindert GET-Request)
 	console.log("click");
-	var id = document.getElementById("id0011").value;
+	var id = document.getElementById("id0012").value;
+	var version = document.getElementById("version").value;
 	var salutation = document.getElementById("salutation").value;
 	var name = document.getElementById("name").value;
 	var surname = document.getElementById("surname").value;
 	var email = document.getElementById("email").value;
 	var date = document.getElementById("birthdate").value;
 
-	var jsonDataString = `{"id":"${id}","salutation":"${salutation}","name":"${name}","surname":"${surname}","email":"${email}","birthdate":"${date}"}`;
+
+	var jsonDataString = `{"id":"${id}","version":"${version}","salutation":"${salutation}","name":"${name}","surname":"${surname}","email":"${email}","birthdate":"${date}"}`;
 	console.log(jsonDataString);
 
 	fetch("http://localhost:8080/json/person", {
@@ -66,7 +70,7 @@ function createPerson(event) {   // bei event-click
 
 function removePerson (event){
 event.preventDefault();
-var id = document.getElementById("id0011").value;
+var id = document.getElementById("id0012").value;
     console.log(id);
     fetch(`http://localhost:8080/json/person/${id}`, {
         		method: 'DELETE'
@@ -76,16 +80,17 @@ refreshClick();
 
 function updatePerson (event){
 event.preventDefault();
-    var id = document.getElementById("id0011").value;
+    var id = document.getElementById("id0012").value;
+    var version = document.getElementById("version").value;
 	var salutation = document.getElementById("salutation").value;
 	var name = document.getElementById("name").value;
 	var surname = document.getElementById("surname").value;
 	var email = document.getElementById("email").value;
 	var date = document.getElementById("birthdate").value;
 
-	var jsonDataString = `{"id":"${id}","salutation":"${salutation}","name":"${name}","surname":"${surname}","email":"${email}","birthdate":"${date}"}`;
+	var jsonDataString = `{"id":"${id}","version":"${version}","salutation":"${salutation}","name":"${name}","surname":"${surname}","email":"${email}","birthdate":"${date}"}`;
 	console.log(jsonDataString);
-    fetch(`/json/person`, {
+    fetch(`http://localhost:8080/json/person`, {
     		method: 'PUT' ,
     		body: jsonDataString,
     		headers: {
@@ -94,6 +99,14 @@ event.preventDefault();
     		});
 refreshClick();
 	}
+
+function removeAllPerson (event){
+    event.preventDefault();
+    fetch(`http://localhost:8080/json/person/deleteAll`, {
+            		method: 'DELETE'
+            	});
+    refreshClick();
+    	}
 
 
 //POST
@@ -107,6 +120,10 @@ input.addEventListener("click",removePerson);
 //UPDATE
 var input = document.getElementById("buttonupdate");
 input.addEventListener("click",updatePerson);
+
+//DELETE ALL
+var input = document.getElementById("buttonclear");
+input.addEventListener("click",removeAllPerson);
 
 function refreshPersons(){
 fetch("http://localhost:8080/json/persons/all")

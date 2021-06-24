@@ -16,35 +16,27 @@
     <table class="table table-dark" align="center" id="tid001">
         <thead class="hideit" id="thid001">
         <tr>
+            <th class="col1"><h5>Nr</h5></th>
             <th class="col1"><h5>ID</h5></th>
+            <th class="col1"><h5>Version</h5></th>
             <th class="col1"><h5>Photo</h5></th>
             <th class="col1"><h5>Salutation</h5></th>
             <th class="col1"><h5>Name</h5></th>
             <th class="col1"><h5>Surname</h5></th>
             <th class="col1"><h5>Email</h5></th>
-            <th class="col1"><h5>Birthdate</h5></th>
+            <th class="col1"><h5>Birthday</h5></th>
         </tr>
         </thead>
         <tbody id="tbid001">
-<!--        <tr>-->
-<!--            <th id="id004" class="col2">1</th>-->
-<!--            <th class="col2"><img src="images/david.png" width="90" height="111"/></th>-->
-<!--            <th id="id003" class="col2">Mr</th>-->
-<!--            <th id="id001" class="col2">Paul</th>-->
-<!--            <th id="id002" class="col2">Paulsen</th>-->
-<!--            <th id="id006" class="col2">06.06.1966</th>-->
-<!--            <th id="id005" class="col2">Paulsen@mail.ru</th>-->
-
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <th class="col2">2</th>-->
-<!--            <th class="col2"><img src="images/women.png"  width="90" height="111"/></th>-->
-<!--            <th class="col2">Mrs</th>-->
-<!--            <th class="col2">Anna</th>-->
-<!--            <th class="col2">Banana</th>-->
-<!--            <th class="col2">06.08.1968</th>-->
-<!--            <th class="col2">Banana@mail.ru</th>-->
-
+<!--        <tr th:each="Person:${personenList}">-->
+<!--            <td class="col1" th:text="${Person.ID}"><h5>ID</h5></td>-->
+<!--            //    <th class="col1"><h5>DB ID</h5></th>-->
+<!--            <td class="col1" ><h5>Photo</h5></td>-->
+<!--            <td class="col1" th:text="${Person.salutation}"><h5>Salutation</h5></td>-->
+<!--            <td class="col1" th:text="${Person.name}"><h5>Name</h5></td>-->
+<!--            <td class="col1"th:text="${Person.surname}"><h5>Surname</h5></td>-->
+<!--            <td class="col1"th:text="${Person.email}"><h5>Email</h5></td>-->
+<!--            <td class="col1"th:text="${Person.birthdate}"><h5>Birthday</h5></td>-->
 <!--        </tr>-->
         </tbody>
     </table>
@@ -53,13 +45,8 @@
 
 <form action="images/joinus.png" align="center">
     <div class="container">
-        <footer align="center">
-            <img src="images/joinus.png" width="150" height="121">
-        </footer>
+
         <h1>Join us!</h1>
-        <hr>
-        <label for="id0011">ID:</label> <br> <input id="id0011" type="text"
-                                                name="id0011"> <br>
 
         <label for="salutation">Salutation</label><br>
         <select name="salutation" id="salutation">
@@ -80,16 +67,24 @@
         <label for="email">E-Mail</label> <br>
         <input type="email" id="email" name="email" placeholder="Enter Your Email"> <br>
 
-        <label for="birthdate">Birthdate</label> <br>
-        <input id="birthdate" type="date" placeholder="Enter Your birthdate" name="birthdate"> <br>
+        <label for="birthdate">Birthday</label> <br>
+        <input id="birthdate" type="date" placeholder="Enter Your birthday" name="birthdate"> <br>
+        <label for="version">Version</label> <br>
+        <input id="version" type="version" placeholder="Enter version" name="version"> <br>
 
-
-        <hr>
-
-        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+        <label for="id0012">ID:</label> <br> <input id="id0012" type="text" placeholder="ID for UPDATE or DELETE"
+                                                    name="id0012"><br>
+        <br>
+        <p>By joining us you agree to our <a href="#">Terms & Privacy</a>.</p>
         <input type="submit" id="button" value="Submit">
-        <input type="submit" id="buttonupdate" value="Update">
         <input type="submit" id="buttonremove" value="Delete">
+        <input type="submit" id="buttonupdate" value="Update">
+        <input type="submit" id="buttonclear" value="Clear the table">
+
+        <br>
+        <footer align="center">
+            <img src="images/joinus.png" width="150" height="121">
+        </footer>
         <hr>
     </div>
     </form>

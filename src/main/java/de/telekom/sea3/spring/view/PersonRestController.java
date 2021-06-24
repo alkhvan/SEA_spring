@@ -50,4 +50,10 @@ public class PersonRestController {
     public Person updatePerson(@RequestBody Person person) {
         return personService.update(person);
     }
+
+    @DeleteMapping("/json/person/deleteAll")
+    public Person deleteAllPerson() {
+        return personService.clear();
+    }
+
 }

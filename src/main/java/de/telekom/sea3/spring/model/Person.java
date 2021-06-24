@@ -2,16 +2,16 @@ package de.telekom.sea3.spring.model;
 import org.springframework.stereotype.Component;
 import org.springframework.beans.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table (name="persons")
 public class Person {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
+    @Version
+    private Long version;
     @Column
     private String salutation;
     @Column
@@ -22,6 +22,14 @@ public class Person {
     private String email;
     @Column
     private String birthdate;
+
+    public Long getVersion() {
+        return version;
+    }
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
 
 
 

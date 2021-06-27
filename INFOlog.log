@@ -1,0 +1,35 @@
+2021-06-27 15:21:12.623  WARN 1323648 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11h37m46s587ms152µs700ns).
+2021-06-27 15:32:53.945  INFO 1323648 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-27 15:32:54.011  INFO 1323648 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-06-27 15:32:54.058  INFO 1323648 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-06-27 15:40:50.042  INFO 1522432 --- [main] de.telekom.sea3.spring.WebServer         : Starting WebServer v1.0 using Java 11.0.11 on spbnb-prc2230 with PID 1522432 (C:\Users\aklochko\IdeaProjects\SEA_spring\target\spring-boot-webserver-1.0.jar started by aklochko in C:\Users\aklochko\IdeaProjects\SEA_spring)
+2021-06-27 15:40:50.054 DEBUG 1522432 --- [main] de.telekom.sea3.spring.WebServer         : Running with Spring Boot v2.5.1, Spring v5.3.8
+2021-06-27 15:40:50.055  INFO 1522432 --- [main] de.telekom.sea3.spring.WebServer         : No active profile set, falling back to default profiles: default
+2021-06-27 15:40:53.079  INFO 1522432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-27 15:40:53.355  INFO 1522432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 236 ms. Found 1 JPA repository interfaces.
+2021-06-27 15:41:01.926  INFO 1522432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-06-27 15:41:02.035  INFO 1522432 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-27 15:41:02.053  INFO 1522432 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-27 15:41:02.526  INFO 1522432 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-27 15:41:02.529  INFO 1522432 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 12193 ms
+2021-06-27 15:41:03.506  INFO 1522432 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-27 15:41:04.017  INFO 1522432 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-27 15:41:05.168  INFO 1522432 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-27 15:41:05.808  INFO 1522432 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-06-27 15:41:06.648  INFO 1522432 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-27 15:41:07.434  INFO 1522432 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDB103Dialect
+2021-06-27 15:41:09.472  INFO 1522432 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-27 15:41:09.510  INFO 1522432 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-27 15:41:11.372  INFO 1522432 --- [main] de.telekom.sea3.spring.PersonService     : [INFO] PersonService instanziiert: de.telekom.sea3.spring.PersonService
+2021-06-27 15:41:11.374  INFO 1522432 --- [main] de.telekom.sea3.spring.PersonService     : [INFO] PersonRepository durch Annotation instanziiert: org.springframework.data.jpa.repository.support.SimpleJpaRepository@72825400
+2021-06-27 15:41:11.692  WARN 1522432 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-27 15:41:13.003  INFO 1522432 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-06-27 15:41:13.834  INFO 1522432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-06-27 15:41:13.877  INFO 1522432 --- [main] de.telekom.sea3.spring.WebServer         : Started WebServer in 26.511 seconds (JVM running for 28.295)
+2021-06-27 15:41:14.102  INFO 1522432 --- [http-nio-8080-exec-10] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-27 15:41:14.103  INFO 1522432 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-27 15:41:14.109  INFO 1522432 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-06-27 15:41:14.535  INFO 1522432 --- [http-nio-8080-exec-10] d.t.s.spring.view.PersonRestController   : Place: null
+2021-06-27 15:45:25.555  INFO 1522432 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-27 15:45:25.562  INFO 1522432 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-06-27 15:45:25.600  INFO 1522432 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

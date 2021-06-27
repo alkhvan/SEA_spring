@@ -5,6 +5,8 @@ import de.telekom.sea3.spring.model.Person;
 import de.telekom.sea3.spring.PersonService;
 import de.telekom.sea3.spring.model.Size;
 import de.telekom.sea3.spring.model.Personen;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 public class PersonRestController {
 
     private PersonService personService;
+
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     public PersonRestController(PersonService personService) {
@@ -54,6 +58,13 @@ public class PersonRestController {
     @DeleteMapping("/json/person/deleteAll")
     public Person deleteAllPerson() {
         return personService.clear();
+    }
+
+    @GetMapping("/json/select")
+    public Personen searchSurname(@RequestParam(name="surname",required = false)String surname){
+    Personen personen = personService.selectPersonen(surname);
+    logger.info("Place: "+surname);
+    return personen;
     }
 
 }

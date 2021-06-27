@@ -2,21 +2,31 @@ package de.telekom.sea3.spring;
 
 import de.telekom.sea3.spring.model.Person;
 import de.telekom.sea3.spring.model.Personen;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+
+
 
 @Service
 public class PersonService {
     private PersonRepositoryDB personRepository;
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     public PersonService(PersonRepositoryDB personRepositoryDB) {
         super();
         System.out.println("PersonService is created: " + this.toString());
         System.out.println("PersonRepository: " + personRepositoryDB.toString());
+        logger.info(String.format("[INFO] PersonService instanziiert: %s", this.getClass().getName()));
+        logger.info(String.format("[INFO] PersonRepository durch Annotation instanziiert: %s", personRepositoryDB.toString()));
         this.personRepository = personRepositoryDB;
     }
-    public Long size(){
+
+    public Long size() {
         return personRepository.count();
     }
 
@@ -35,24 +45,36 @@ public class PersonService {
             return null;
         }
     }
-    public Person add (Person person){
+
+    public Person add(Person person) {
         personRepository.save(person);
         System.out.println("Person was added");
         return person;
     }
+
     public Person delete(Long id) {
         System.out.println("Person is removed.");
         personRepository.deleteById(id);
         return null;
     }
+
     public Person update(Person person) {
         personRepository.save(person);
         System.out.println("Person was changed!");
         return null;
     }
+
     public Person clear() {
-       personRepository.deleteAll();
+        personRepository.deleteAll();
         System.out.println("Cleanup the list completely");
         return null;
+    }
+
+    public Personen selectPersonen(String surname) {
+        Personen ps = new Personen();
+        for (Person p : personRepository.selectPersonen()) {
+            ps.getPersonen().add(p);
+        }
+        return ps;
     }
 }
